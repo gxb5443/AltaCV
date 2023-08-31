@@ -1,0 +1,383 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.7, 9 August 2023) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+
+% If your CV/résumé is in a language other than English,
+% then you probably want to change these so that when you
+% copy-paste from the PDF or run pdftotext, the location
+% and date marker icons for \cvevent will paste as correct
+% translations. For example Spanish:
+% \renewcommand{\locationname}{Ubicación}
+% \renewcommand{\datename}{Fecha}
+
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear.cfg}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+\input{pubs-num.cfg}
+
+%% sample.bib contains your publications
+\addbibresource{gian.bib}
+
+\begin{document}
+\name{Gianfranco Biondi Jr.}
+\tagline{Engineering Excellence and Leadership}
+%% You can add multiple photos on the left or right
+\photoR{2.8cm}{computer}
+% \photoR{2.8cm}{Globe_High}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{me@gianbiondi.com}
+  \phone{862-231-5009}
+  \location{Newark, NJ, United States}
+  \homepage{www.gianbiondi.com}
+  \linkedin{linkedin.com/in/gianfranco-biondi}
+  \github{github.com/gxb5443}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+\cvsection{Experience}
+
+\cvevent{Co-Founder \& CTO}{Swap Health}{Sep. 2021 -- Sep. 2023}{Jersey City, NJ}
+\begin{itemize}
+  \item Designed and built Google Chrome Extension to help users grocery shop online
+  \item Managed team of four contractors to build a mobile application
+  \item Built core technology API to identify and recommend grocery products
+  \item Ensured HIPAA Compliance
+  \item Collaborated in building business plan and pitch deck
+  \item Instrumental in fundraising effort, from angel investors to Established Venture Capital Firms
+\end{itemize}
+
+\divider
+
+\cvevent{Staff Software Engineer \& Technical Lead}{Walmart Labs/Jet.com}{Jan. 2020 -- Sep. 2021}{Hoboken, NJ}
+\begin{itemize}
+  %\item Work on internal experimentation (A/B Testing) platform (Expo)
+  \item Lead effort to convert system from Lua-based edge workers to full micro-service platform to work with Envoy Proxy
+  \item Lead research for next-gen assignment engine using WASM and Istio service mesh for all of Walmart GM and Grocery
+  \item Designed and Implemented GitOps System for Expermient Creation
+  \item Lead design and implementation for global distributed trace header for all of Walmart E-Commerce (OpenTelemetry)
+\end{itemize}
+
+\divider
+
+\cvevent{Senior Software Engineer}{Walmart Labs/Jet.com}{Apr. 2018 -- Jan. 2020}{Hoboken, NJ}
+\begin{itemize}
+  \item Worked on Jet.com internal experimentation (A/B Testing) platform (Phaser)
+  \item Led effort in converting Lua \& C system to full micro-service platform with Envoy Proxy via custom HTTP Filter
+  %\item Aided heavily in transition from Jet systems to Walmart systems
+\end{itemize}
+
+\divider
+
+\cvevent{Network Security Software Engineer}{DoubleVerify}{Mar. 2016 -- Apr. 2018}{New York, NY}
+\begin{itemize}
+  \item Lead a small R\&D team for Publisher Platform
+  \item Researched protocol-level and browser-level, advanced ad measurement and delivery techniques
+  \item Implemented prototype on-the-fly JavaScript static analyzer
+  \item Helped build next-gen data pipeline for real-time impression measurement, Real-time bidding, and social integration
+  \item Optimized SQL for reports from Vertica SQL Data Warehouse
+\end{itemize}
+
+% \divider
+
+% \cvevent{Software Engineer}{Namely}{December 2014 -- March 2016}{New York, NY}
+% \begin{itemize}
+% \item Helped re-architect ruby monolith into containerized Golang micro-services
+% %\item Built Open Source Historical Data-store (deprecated)
+% \end{itemize}
+
+%\cvevent{Lead Developer}{Creative Technology Designs}{February 2013 -- September 2013}{Wall, NJ}
+%\begin{itemize}
+%\item Job description 1
+%\item Job description 2
+%\end{itemize}
+
+%\divider
+%
+%\cvevent{Technology Contractor}{Self Employed}{October 2012 -- Ongoing}{Newark, NJ}
+%\begin{itemize}
+%\item Provided technology services to various companies including large-scale data migration, website design, building web applications, and work for the iOS and Android platforms.
+%\end{itemize}
+
+%\divider
+%
+%\cvevent{Engineer Contractor}{United States Dept. of Defense}{May 2008 -- September 2009}{Warner Robins, GA}
+%\begin{itemize}
+%\item Wrote secure communication software tool for use with all military GPS 
+%units as well as troubleshooted circuits for high precision timing interface 
+%with GPS simulation computers using \emph{.NET}, Java and C++. Also performed 
+%testing, reports and troubleshooting for GPS units. 
+%\item Aided in reverse engineering of C-5 Galaxy Cargo Aircraft landing gear sequence control system and designed and implemented a new system using VHDL, including testing procedures and documentation.
+%\end{itemize}
+%
+%\divider
+%
+%\cvevent{Technology Contractor}{Princeton University Plasma Physics Lab}{July 2007 -- August 2009}{Princeton, NJ}
+%\begin{itemize}
+%\item Maintained and developed C/C++ and UNIX software for the Miniature Integrated Nuclear Detection System used by the US Department of Homeland Security and US Department of Energy. 
+%%\item Researched metrology techniques including photogrammetry and laser tracking during the construction of the NCSX fusion reactor.
+%\end{itemize}
+
+%% Lab Assistant
+%\divider
+%
+%\cvevent{Lab Assistant}{Rochester Institute of Technology}{November 2008 -- August 2012}{Rochester, NY}
+%\begin{itemize}
+%\item Provide assistance, instruction and grading for Lab sections for Circuits, Electronics, Digital Design and C/C++/VHDL Pro- gramming classes as well as provided private tutoring in theory and building and design techniques such as CAD, PSPICE and Circuit Board Fabrication.
+%\end{itemize}
+
+%\cvsection{Projects}
+%
+%\cvevent{Project 1}{Funding agency/institution}{}{}
+%\begin{itemize}
+%\item Details
+%\end{itemize}
+%
+%\divider
+%
+%\cvevent{Project 2}{Funding agency/institution}{Project duration}{}
+%A short abstract would also work.
+%
+%\medskip
+%
+%\cvsection{A Day of My Life}
+%
+%% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+%% \wheelchart{outer radius}{inner radius}{
+%% comma-separated list of value/text width/color/detail}
+%\wheelchart{1.5cm}{0.5cm}{%
+%  6/8em/accent!30/{Sleep,\\beautiful sleep},
+%  3/8em/accent!40/Hopeful novelist by night,
+%  8/8em/accent!60/Daytime job,
+%  2/10em/accent/Sports and relaxation,
+%  5/6em/accent!20/Spending time with family
+%}
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the current column
+\newpage
+
+\cvsection{Publications}
+
+%% Specify your last name(s) and first name(s) as given in the .bib to automatically bold your own name in the publications list.
+%% One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly; or write \bibnamedelimi if you use initials in the .bib
+%% You can specify multiple names, especially if you have changed your name or if you need to highlight multiple authors.
+\mynames{Gianfranco\bibnamedelima Biondi}
+%% MAKE SURE THERE IS NO SPACE AFTER THE FINAL NAME IN YOUR \mynames LIST
+
+\nocite{*}
+
+%\printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+%
+%\divider
+%
+%\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}},type=article]
+%
+%\divider
+
+\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
+
+\divider
+
+\printbibliography[heading=pubtype,title={\printinfo{\faFile*}{Blog Posts}},type=misc]
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+%\cvsection{My Life Philosophy}
+%
+%\begin{quote}
+%``Something smart or heartfelt, preferably in one sentence.''
+%\end{quote}
+
+\cvsection{Most Proud of}
+
+\cvachievement{\faLightbulb[regular]}{Built a Start-up}{Jersey City, 2021}
+
+\divider
+
+\cvachievement{\faTrophy}{Dean's List}{Rochester Institute of Technology, 2006-2010}
+
+\divider
+
+\cvachievement{\faTrophy}{ASEE SMART Scholarship}{Dept. of Defense, 2008-2012}
+
+\cvsection{Strengths}
+
+\cvtag{Executive Presence} 
+\cvtag{Hard-working}\\
+\cvtag{Detail Oriented}
+\cvtag{Leader \& Motivator}\\
+\cvtag{Effective Communicator \& Collaborator}\\
+\cvtag{Fast Learner}
+\cvtag{Team Player}
+\cvtag{Mentoring}
+
+\divider\smallskip
+
+\cvtag{Golang}
+\cvtag{C/C++}
+\cvtag{Java}
+\cvtag{Linux}
+\cvtag{SQL}
+\cvtag{Python}
+\cvtag{Scala}
+\cvtag{F\#}
+\cvtag{Javascript} \\
+\cvtag{Typescript}
+\cvtag{React}
+\cvtag{Kafka}
+\cvtag{Docker}
+\cvtag{Kubernetes}
+\cvtag{MongoDB}
+\cvtag{Lua}
+\cvtag{Vim}
+\cvtag{OSS}
+\cvtag{Envoy Proxy}
+\cvtag{Istio}
+\cvtag{nginx}
+\cvtag{GraphQL}
+\cvtag{Web Assembly} \\
+\cvtag{Distributed Systems} \\
+\cvtag{Raspberry Pi/Arduino}
+\cvtag{Statistical Analysis}
+\cvtag{Circuit Analysis}
+\cvtag{Autodesk Fusion 360}
+\cvtag{3D Printing}
+\cvtag{Circuit Fabrication} \\
+\cvtag{Embedded Systems}
+\cvtag{\LaTeX}
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+\medskip
+
+\cvsection{Education}
+
+\cvevent{B.Sc. Computer Engineering}{Rochester Institute of Technology}{September 2006 -- August 2012}{}
+\divider
+\cvevent{M.Sc. Computer Science}{Georgia Institute of Technology}{March 2020 -- Ongoing}{}
+
+%\cvsection{Referees}
+%
+%% \cvref{name}{email}{mailing address}
+%\cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
+%{Address Line 1\\Address line 2}
+%
+%\divider
+%
+%\cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
+%{Address Line 1\\Address line 2}
+
+
+\end{paracol}
+
+
+\end{document}
