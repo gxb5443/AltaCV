@@ -1,0 +1,13 @@
+.DS_Store
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.blg
+*.bcf
+*.bbl
+*.xml
+*.xmpi
+*.fls
+*.fdb_latexmk
+dualColResume.pdf
