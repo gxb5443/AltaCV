@@ -10,4 +10,5 @@
 *.xmpi
 *.fls
 *.fdb_latexmk
+*.synctex
 dualColResume.pdf
