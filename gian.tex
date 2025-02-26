@@ -28,7 +28,7 @@
 % you're using pdflatex or xelatex/lualatex
 % WHEN COMPILING WITH XELATEX PLEASE USE
 % xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex
-\ifxetexorluatex
+\iftutex
   % If using xelatex or lualatex:
   \setmainfont{Roboto Slab}
   \setsansfont{Lato}
@@ -141,7 +141,17 @@
 % break across pages if things get too long.
 \begin{paracol}{2}
   \cvsection{Most Relevant Experience}
+
+  \cvevent{Principal Engineer}{Walmart Global Tech}{Mar. 2024 -- Present}{Hoboken, NJ}
+  \begin{itemize}
+      \item Designed core components of national Test and Treat
+      \item Technial lead for nation-wide store technology modernization, converting hundreds of legacy C programs to Go with modern architures
+      \item Elevated engineering quality through templates, workshops, git best-practices, design/PR reviews, etc.
+      \item Championed first-party Golang support within Walmart through documentation, workshops, and adding support in CI/CD Platform
+  \end{itemize}
   
+  \divider
+
   \cvevent{Co-Founder \& CTO}{Swap Health}{Sep. 2021 -- Sep. 2023}{Jersey City, NJ}
   \begin{itemize}
     \item Designed and built Google Chrome Extension to help users grocery shop online
@@ -187,16 +197,16 @@
   %         %\item Aided heavily in transition from Jet systems to Walmart systems
   % \end{itemize}
   
-  \divider
-  
-  \cvevent{Network Security Software Engineer}{DoubleVerify}{Mar. 2016 -- Apr. 2018}{New York, NY}
-  \begin{itemize}
-    \item Led a small R\&D team for Publisher Platform
-    \item Researched protocol-level and browser-level, advanced ad measurement and delivery techniques
-    \item Implemented prototype on-the-fly JavaScript static analyzer
-    \item Helped build next-gen data pipeline for real-time impression measurement, real-time bidding, and social integration
-    \item Optimized large SQL used in Vertica Data Warehouse
-  \end{itemize}
+  %\divider
+  %
+  %\cvevent{Network Security Software Engineer}{DoubleVerify}{Mar. 2016 -- Apr. 2018}{New York, NY}
+  %\begin{itemize}
+  %  \item Led a small R\&D team for Publisher Platform
+  %  \item Researched protocol-level and browser-level, advanced ad measurement and delivery techniques
+  %  \item Implemented prototype on-the-fly JavaScript static analyzer
+  %  \item Helped build next-gen data pipeline for real-time impression measurement, real-time bidding, and social integration
+  %  \item Optimized large SQL used in Vertica Data Warehouse
+  %\end{itemize}
   
   % \divider
   
@@ -381,7 +391,7 @@
   %\cvevent{B.Sc. Computer Engineering}{Rochester Institute of Technology}{September 2006 -- August 2012}{}
   \cvevent{B.Sc. Computer Engineering}{Rochester Institute of Technology}{August 2012}{}
   \divider
-  \cvevent{M.Sc. Computer Science}{Georgia Institute of Technology}{Expected December 2024}{}
+  \cvevent{M.Sc. Computer Science}{Georgia Institute of Technology}{Expected December 2025}{}
   %\cvevent{M.Sc. Computer Science}{Georgia Institute of Technology}{March 2020 -- Ongoing}{}
   
   %\cvsection{Referees}
